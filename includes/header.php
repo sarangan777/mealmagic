@@ -67,9 +67,9 @@ if (isset($_GET['lang']) && array_key_exists($_GET['lang'], $languages)) {
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap">
   
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="<?php echo SITE_URL; ?>/assets/css/styles.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo SITE_URL; ?>/assets/css/styles.css">
   <?php if (strpos($_SERVER['PHP_SELF'], '/admin/') !== false): ?>
-    <link rel="stylesheet" href="<?php echo SITE_URL; ?>/admin/admin.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo SITE_URL; ?>/admin/admin.css">
   <?php endif; ?>
   
   <!-- Check for dark mode preference -->

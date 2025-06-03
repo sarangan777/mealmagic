@@ -1,13 +1,10 @@
+# Enable the rewrite engine
 RewriteEngine On
-RewriteBase /
 
 # Handle front controller pattern
-RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php [QSA,L]
-
-# Prevent directory listing
-Options -Indexes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [L]
 
 # Set default character set
 AddDefaultCharset UTF-8
@@ -20,10 +17,16 @@ Header set X-Content-Type-Options "nosniff"
 Header set X-Frame-Options "SAMEORIGIN"
 Header set X-XSS-Protection "1; mode=block"
 
-# Disable server signature
-ServerSignature Off
-
 # Cache control for static assets
 <FilesMatch "\.(css|js|jpg|jpeg|png|gif|ico)$">
     Header set Cache-Control "max-age=31536000, public"
 </FilesMatch>
+
+# Serve CSS files with correct MIME type
+AddType text/css .css
+AddType application/javascript .js
+
+# Allow direct access to assets directory
+<Directory "assets">
+    Allow from all
+</Directory>
