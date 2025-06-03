@@ -68,7 +68,7 @@ if (isset($_GET['lang']) && array_key_exists($_GET['lang'], $languages)) {
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap">
   
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/styles.css">
   
   <!-- Check for dark mode preference -->
   <script>
