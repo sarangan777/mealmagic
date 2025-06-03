@@ -20,4 +20,22 @@ if (!isset($_SESSION['cart'])) {
 if (!isset($_SESSION['lang'])) {
     $_SESSION['lang'] = 'en';
 }
+
+// Set error handling
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('log_errors', 1);
+ini_set('error_log', __DIR__ . '/../logs/error.log');
+
+// Ensure upload directory exists with proper permissions
+$uploadDir = __DIR__ . '/../assets/images/food';
+if (!file_exists($uploadDir)) {
+    mkdir($uploadDir, 0777, true);
+}
+
+// Ensure logs directory exists with proper permissions
+$logDir = __DIR__ . '/../logs';
+if (!file_exists($logDir)) {
+    mkdir($logDir, 0777, true);
+}
 ?>

@@ -1,6 +1,9 @@
 # Enable the rewrite engine
 RewriteEngine On
 
+# Set the base directory
+RewriteBase /
+
 # Handle front controller pattern
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -22,11 +25,28 @@ Header set X-XSS-Protection "1; mode=block"
     Header set Cache-Control "max-age=31536000, public"
 </FilesMatch>
 
-# Serve CSS files with correct MIME type
+# Serve files with correct MIME types
 AddType text/css .css
 AddType application/javascript .js
+AddType image/jpeg .jpg .jpeg
+AddType image/png .png
+AddType image/gif .gif
 
-# Allow direct access to assets directory
+# PHP settings
+php_value upload_max_filesize 10M
+php_value post_max_size 10M
+php_value max_execution_time 300
+php_value max_input_time 300
+
+# Directory access
 <Directory "assets">
-    Allow from all
+    Options FollowSymLinks
+    AllowOverride None
+    Require all granted
+</Directory>
+
+<Directory "assets/images">
+    Options FollowSymLinks
+    AllowOverride None
+    Require all granted
 </Directory>
