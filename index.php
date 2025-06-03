@@ -1,15 +1,14 @@
 <?php
-require_once 'includes/db.php';
-require_once 'includes/functions.php';
+require_once 'includes/init.php';
 
 // Get featured items (most ordered)
 $featured_items = getMostOrderedItems(4);
 
 // Get all categories
 $categories = getCategories();
-?>
 
-<?php include 'includes/header.php'; ?>
+include 'includes/header.php';
+?>
 
 <div class="hero">
   <div class="hero-content">
