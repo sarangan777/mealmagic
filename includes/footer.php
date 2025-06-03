@@ -14,10 +14,10 @@
           <div class="footer-section">
             <h3>Quick Links</h3>
             <ul>
-              <li><a href="index.php">Home</a></li>
-              <li><a href="menu.php">Menu</a></li>
-              <li><a href="cart.php">Cart</a></li>
-              <li><a href="order-status.php">Track Order</a></li>
+              <li><a href="/index.php">Home</a></li>
+              <li><a href="/menu.php">Menu</a></li>
+              <li><a href="/cart.php">Cart</a></li>
+              <li><a href="/order-status.php">Track Order</a></li>
             </ul>
           </div>
           
@@ -56,7 +56,7 @@
   </footer>
   
   <!-- Custom JavaScript -->
-  <script src="assets/js/scripts.js"></script>
+  <script src="/assets/js/scripts.js"></script>
   
   <!-- Language switcher script -->
   <script>
