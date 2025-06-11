@@ -14,7 +14,7 @@ try {
     die("Connection failed: " . $e->getMessage());
 }
 
-// Set timezone
+// Set timezone for Sri Lanka
 date_default_timezone_set('Asia/Colombo');
 
 // Start session if not already started
